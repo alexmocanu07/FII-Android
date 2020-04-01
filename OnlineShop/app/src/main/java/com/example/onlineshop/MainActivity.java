@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.onlineshop.activities.LocationActivity;
 import com.example.onlineshop.activities.SensorsActivity;
 import com.example.onlineshop.activities.SettingsActivity;
 import com.example.onlineshop.adapter.ProductAdapter;
@@ -135,6 +136,10 @@ public class MainActivity extends AppCompatActivity implements AddProductDialogF
             case R.id.action_sensors:
                 Intent intentSensors = new Intent(this, SensorsActivity.class);
                 startActivity(intentSensors);
+                break;
+            case R.id.action_location:
+                Intent intentLocation = new Intent(this, LocationActivity.class);
+                startActivity(intentLocation);
                 break;
 
         }

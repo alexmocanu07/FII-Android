@@ -18,7 +18,6 @@ import java.util.Map;
 public class SensorsActivity extends AppCompatActivity implements SensorEventListener {
 
     private SensorManager sensorManager;
-    private Sensor accelerometer;
 
     private Map<Integer, String> sensorList;
     @Override
@@ -28,7 +27,6 @@ public class SensorsActivity extends AppCompatActivity implements SensorEventLis
         this.setTitle("Sensors Info");
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorList = new HashMap<>();
         List<Sensor> sensors = sensorManager.getSensorList(Sensor.TYPE_ALL);
 
@@ -43,7 +41,6 @@ public class SensorsActivity extends AppCompatActivity implements SensorEventLis
         for(Map.Entry<Integer, String> item: sensorList.entrySet()){
             sensorManager.registerListener(this, sensorManager.getDefaultSensor(item.getKey()), SensorManager.SENSOR_DELAY_NORMAL);
         }
-//        sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
@@ -71,7 +68,6 @@ public class SensorsActivity extends AppCompatActivity implements SensorEventLis
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
-
     }
 
 
