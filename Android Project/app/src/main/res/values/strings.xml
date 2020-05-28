@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FlipFive</string>
+    <string name="moves_text_initial">Moves: 0</string>
+</resources>
